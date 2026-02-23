@@ -7,6 +7,7 @@
     font-family: 'Inter', sans-serif;
 }
 
+/* ====== MODO CLARO (padrão) ====== */
 body {
     background: #f5f5f5;
     color: #222;
@@ -51,11 +52,13 @@ h2 {
     border-radius: 12px;
     margin-bottom: 20px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    transition: transform .2s ease;
+    transition: transform .2s ease, border-color .2s ease;
+    border: 1px solid #e0e0e0;
 }
 
 .projects .card:hover {
     transform: translateY(-4px);
+    border-color: #0070f3;
 }
 
 .projects .card a {
@@ -68,4 +71,47 @@ footer {
     text-align: center;
     margin-top: 40px;
     color: #777;
+}
+
+/* ====== DARK MODE AUTOMÁTICO ====== */
+@media (prefers-color-scheme: dark) {
+
+    body {
+        background: #0d0d0d;
+        color: #e6e6e6;
+    }
+
+    header h1 {
+        color: #ffffff;
+    }
+
+    header p {
+        color: #9b9b9b;
+    }
+
+    h2 {
+        color: #ffffff;
+    }
+
+    .about p {
+        color: #cfcfcf;
+    }
+
+    .projects .card {
+        background: #1a1a1a;
+        border: 1px solid #2a2a2a;
+        box-shadow: none;
+    }
+
+    .projects .card:hover {
+        border-color: #4da8ff;
+    }
+
+    .projects .card a {
+        color: #4da8ff;
+    }
+
+    footer {
+        color: #777;
+    }
 }
