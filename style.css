@@ -7,7 +7,25 @@
     font-family: 'Inter', sans-serif;
 }
 
-/* ====== MODO CLARO (padrão) ====== */
+/* ===== BOTÃO DE TEMA ===== */
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: #0070f3;
+    color: white;
+    font-weight: 600;
+    transition: opacity .2s ease;
+}
+#theme-toggle:hover {
+    opacity: 0.8;
+}
+
+/* ===== TEMA CLARO ===== */
 body {
     background: #f5f5f5;
     color: #222;
@@ -73,45 +91,50 @@ footer {
     color: #777;
 }
 
-/* ====== DARK MODE AUTOMÁTICO ====== */
-@media (prefers-color-scheme: dark) {
+/* ===== DARK MODE ===== */
+body.dark {
+    background: #0d0d0d;
+    color: #e6e6e6;
+}
 
-    body {
+body.dark header h1 {
+    color: #ffffff;
+}
+
+body.dark header p {
+    color: #9b9b9b;
+}
+
+body.dark h2 {
+    color: #ffffff;
+}
+
+body.dark .about p {
+    color: #cfcfcf;
+}
+
+body.dark .projects .card {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    box-shadow: none;
+}
+
+body.dark .projects .card:hover {
+    border-color: #4da8ff;
+}
+
+body.dark .projects .card a {
+    color: #4da8ff;
+}
+
+body.dark footer {
+    color: #777;
+}
+
+/* ===== DARK MODE AUTOMÁTICO ===== */
+@media (prefers-color-scheme: dark) {
+    body:not(.light) {
         background: #0d0d0d;
         color: #e6e6e6;
-    }
-
-    header h1 {
-        color: #ffffff;
-    }
-
-    header p {
-        color: #9b9b9b;
-    }
-
-    h2 {
-        color: #ffffff;
-    }
-
-    .about p {
-        color: #cfcfcf;
-    }
-
-    .projects .card {
-        background: #1a1a1a;
-        border: 1px solid #2a2a2a;
-        box-shadow: none;
-    }
-
-    .projects .card:hover {
-        border-color: #4da8ff;
-    }
-
-    .projects .card a {
-        color: #4da8ff;
-    }
-
-    footer {
-        color: #777;
     }
 }
